@@ -1,4 +1,8 @@
-FROM openjdk:8
-EXPOSE 8080
-ADD target/docker-jenkins-integration-sample.jar docker-jenkins-integration-sample.jar
-ENTRYPOINT ["java","-jar","/docker-jenkins-integration-sample.jar"]
+FROM node:alpine
+
+EXPOSE 1337
+
+WORKDIR /var/www
+COPY package.json /var/www/
+RUN npm install
+COPY index.js /var/www/

@@ -10,7 +10,7 @@ pipeline {
          stage('Build Docker Image') {
             steps {
                 script {
-                  sh 'docker build -t 9526584898/mypipeline '
+                  sh 'docker build -t 9526584898/mypipeline .'
                 }
             }
         }
